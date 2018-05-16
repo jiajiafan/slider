@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滑动条</title>
+    <style type="text/css">
+        *{margin:0;padding:0}
+        body{padding-top:30px;text-align: center}    
+          /*谷歌浏览器样式开始 */
+        input[type=range] {
+            /* 轨道的样式 */
+            -webkit-appearance: none;
+            outline: none;
+            width:600px;
+            height:20px;
+            border-radius: 10px; 
+            box-shadow: 0 1px 1px 0 #ddd inset; 
+            background:-webkit-linear-gradient(#f80f80, #f80f80) no-repeat,#eee;
+            background-size:1% 100%;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            /* 滑块的样式 */
+            -webkit-appearance: none;
+            height: 34px;
+            width: 34px;
+            background: #FF5C5C;
+            border-radius: 50%; /*外观设置为圆形*/
+            border: solid 4px #fff; /*设置边框*/
+            box-shadow: 0 0 0 #3b4547; /*添加底部阴影*/
+        }  
+         /*谷歌浏览器样式结束 */
+          /* 火狐浏览器样式开始 */ 
+          input[type=range]::-moz-range-progress {
+          background:-moz-linear-gradient(left,#f80f80, #f80f80);
+          height:20px;
+          border-radius: 10px; 
+        }
+        input[type=range]::-moz-range-track {
+          background:#eee;
+          height:20px;
+          border-radius: 10px; 
+        }
+        input[type=range]::-moz-range-thumb {
+            /* 滑块的样式 */
+            -webkit-appearance: none;
+            height: 34px;
+            width: 34px;
+            background: #FF5C5C;
+            border-radius: 50%; /*外观设置为圆形*/
+            border: solid 4px #fff; /*设置边框*/
+            box-shadow: 0 0 0 #3b4547; /*添加底部阴影*/
+        } 
+          /* 火狐浏览器样式结束 */ 
+    </style>
+</head>
+<body>
+   <input type="range" value="0" min="0" max="100" step="5" id="jsChange">
+   <!-- min最小值，max最大值，step每次移动的步数 -->
+</body>
+<script type="text/javascript">
+      jsChange.oninput = function(){  
+          this.style.backgroundSize=this.value+'% 100%';   
+      } 
+</script>
+</html>
